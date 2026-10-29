@@ -45,9 +45,9 @@ class ProfilePage extends StatelessWidget {
               role: '1124160009 (TI 24 P SE-3)',
               onEditPressed: () => _showEditMessage(context),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 20),
             const ProfileStats(),
-            const SizedBox(height: 24),
+            const SizedBox(height: 25),
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
