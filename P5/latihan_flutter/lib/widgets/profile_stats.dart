@@ -34,16 +34,13 @@ class StatItem extends StatelessWidget {
         Text(
           value,
           style: const TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
+            fontSize: 24,
+            fontWeight: FontWeight.w500,
             color: Colors.blueAccent,
           ),
         ),
         const SizedBox(height: 4),
-        Text(
-          label,
-          style: TextStyle(fontSize: 13, color: Colors.grey.shade700),
-        ),
+        Text(label, style: const TextStyle(color: Colors.grey, fontSize: 12)),
       ],
     );
   }
