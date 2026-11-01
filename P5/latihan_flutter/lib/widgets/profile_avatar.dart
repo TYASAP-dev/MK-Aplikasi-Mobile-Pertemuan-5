@@ -23,6 +23,7 @@ class ProfileAvatar extends StatelessWidget {
       child: CircleAvatar(
         radius: radius,
         backgroundColor: const Color(0xFF757575),
+        foregroundImage: const AssetImage('assets/images/icon.jpg'),
         child: Icon(Icons.person_rounded, size: radius, color: Colors.white),
       ),
     );
