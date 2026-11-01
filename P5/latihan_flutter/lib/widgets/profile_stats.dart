@@ -5,43 +5,71 @@ class ProfileStats extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Card(
+      margin: EdgeInsets.zero,
+      color: Colors.white,
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: const BorderSide(color: Color(0xFFE8EDF5)),
+      ),
+      child: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+        child: Row(
+          children: [
+            Expanded(
+              child: _StatItem(value: '18', label: 'Proyek'),
+            ),
+            _StatDivider(),
+            Expanded(
+              child: _StatItem(value: '1', label: 'Followers'),
+            ),
+            _StatDivider(),
+            Expanded(
+              child: _StatItem(value: '0', label: 'Following'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _StatItem extends StatelessWidget {
+  final String value;
+  final String label;
+
+  const _StatItem({required this.value, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Expanded(
-          child: StatItem(value: '17', label: 'Proyek'),
+        Text(
+          value,
+          style: const TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w600,
+            color: Colors.blueAccent,
+          ),
         ),
-        Expanded(
-          child: StatItem(value: '1', label: 'Followers'),
-        ),
-        Expanded(
-          child: StatItem(value: '0', label: 'Following'),
+        const SizedBox(height: 4),
+        Text(
+          label,
+          textAlign: TextAlign.center,
+          style: const TextStyle(fontSize: 12, color: Colors.grey),
         ),
       ],
     );
   }
 }
 
-class StatItem extends StatelessWidget {
-  final String value;
-  final String label;
-
-  const StatItem({super.key, required this.value, required this.label});
+class _StatDivider extends StatelessWidget {
+  const _StatDivider();
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          value,
-          style: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.w500,
-            color: Colors.blueAccent,
-          ),
-        ),
-        const SizedBox(height: 4),
-        Text(label, style: const TextStyle(color: Colors.grey, fontSize: 12)),
-      ],
-    );
+    return Container(width: 1, height: 38, color: const Color(0xFFE8EDF5));
   }
 }
